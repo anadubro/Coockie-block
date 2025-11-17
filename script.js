@@ -24,8 +24,10 @@ class CookiePopup {
 */
   getSettings(userSettings) {
     const defaultSettings = {
-      text: "Мы используем файлы cookie для улучшения работы сайта. Подробнее см. ",
-      link: { text: "политика cookies", href: "https://example.com/cookies" },
+      text: "Мы используем файлы cookie для улучшения работы сайта. Подробнее см. [cookie], [защита данных]",
+      linkUrls: ["https://example.com/cookies", "https://example.com/cookies23232"],
+
+      // link: { text: "политика cookies", href: "https://example.com/cookies" },
       buttonText: "Принять",
 
       backgroundColorBlock: '#e0e9fc',
@@ -52,7 +54,6 @@ class CookiePopup {
     };
 
     let resultSettings = { ...defaultSettings, ...userSettings };
-    console.log(resultSettings);
     return resultSettings;
   }
 
@@ -65,18 +66,33 @@ class CookiePopup {
     this.containerElement.classList.add('cookie-popup');
 
 // Текст
-    this.textElement = document.createElement('p');
-    this.textElement.classList.add('cookie-popup__text');
-    this.textElement.textContent = this.settings.text;
+    let paragraphElement = document.createElement('p');
+    paragraphElement.classList.add('cookie-popup__text');
+    this.containerElement.append(paragraphElement);
 
-// Ссылки
-    this.linkElement = document.createElement('a');
-    this.linkElement.classList.add('cookie-popup__link');
-    this.linkElement.setAttribute('target', '_blank');
-    this.linkElement.setAttribute('href', '');
+    let subStringList = this.settings.text.split(/(\[.+?\])/);
+    console.log(subStringList)
 
-    this.linkElement.textContent = this.settings.link.text;
-    this.linkElement.href = this.settings.link.href;
+    let linkIndex = 0;
+    for(let i = 0; i < subStringList.length; i++) {
+      let subString = subStringList[i];
+      if(subString[0] == '[') {
+        let linkElement = document.createElement('a');
+        linkElement.classList.add('cookie-popup__link');
+        linkElement.setAttribute('target', '_blank');
+        linkElement.setAttribute('href', '');
+
+        let cleanText = subString.replace('[', '').replace(']', '');
+        linkElement.textContent = cleanText;
+        linkElement.setAttribute('href', this.settings.linkUrls[linkIndex] || "#");
+        paragraphElement.append(linkElement);
+
+        linkIndex++;
+      } else {
+        let textNode = document.createTextNode(subString);
+        paragraphElement.append(textNode);
+      }
+    }
 
 // Кнопка отправки
     this.submitElement = document.createElement('button');
@@ -91,10 +107,8 @@ class CookiePopup {
 // Добавляем узлы
     document.head.append(this.styles);
 
-    this.containerElement.append(this.textElement, this.linkElement, this.submitElement);
+    this.containerElement.append(this.submitElement);
     document.body.append(this.containerElement);
-
-    this.textElement.append(this.linkElement);
   }
 
 /**
