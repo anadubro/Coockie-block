@@ -7,7 +7,7 @@
 
 class CookiePopup {
 /**
-  * @param {Obect} userSettings Настройки ppopup 
+  * @param {Object} userSettings Popup settings 
 */
   constructor(userSettings) {
     this.settings = this.getSettings(userSettings);
@@ -18,16 +18,14 @@ class CookiePopup {
   }
 
 /**
- * Объединяет настройки по умолчанию с пользовательскими
- * @param {Obect} userSettings Настройки, переданные пользователем
- * @returns {Object} Итоговые настойки popup
+   * Combines default settings with user settings
+   * @param {Object} userSettings Settings passed by the user
+   * @returns {Object} Final popup settings
 */
   getSettings(userSettings) {
     const defaultSettings = {
       text: "Мы используем файлы cookie для улучшения работы сайта. Подробнее см. [cookie], [защита данных]",
       linkUrls: ["https://example.com/cookies", "https://example.com/cookies23232"],
-
-      // link: { text: "политика cookies", href: "https://example.com/cookies" },
       buttonText: "Принять",
 
       backgroundColorBlock: '#e0e9fc',
@@ -58,14 +56,14 @@ class CookiePopup {
   }
 
 /**
- * Создает HTML-элементы popup
+  * Creates HTML popup elements
 */
   createElements() {
-// Контейнер
+// Container
     this.containerElement = document.createElement('div');
     this.containerElement.classList.add('cookie-popup');
 
-// Текст
+// Text
     let paragraphElement = document.createElement('p');
     paragraphElement.classList.add('cookie-popup__text');
     this.containerElement.append(paragraphElement);
@@ -94,17 +92,17 @@ class CookiePopup {
       }
     }
 
-// Кнопка отправки
+// Submit button
     this.submitElement = document.createElement('button');
     this.submitElement.classList.add('cookie-popup__submit');
     this.submitElement.setAttribute('type', 'submit');
     this.submitElement.setAttribute('aria-label', 'Принять использование куки');
     this.submitElement.textContent = this.settings.buttonText;
 
-// Тег для стилей
+// Tag for styles
     this.styles = document.createElement('style');
 
-// Добавляем узлы
+// Add nodes
     document.head.append(this.styles);
 
     this.containerElement.append(this.submitElement);
@@ -112,7 +110,7 @@ class CookiePopup {
   }
 
 /**
- * Приеняет стили к popup через тег <style>
+ * Applies styles to popup via <style> tag
 */
   applyStyles() {
     this.styles.textContent = `
@@ -194,7 +192,7 @@ class CookiePopup {
   }
 
 /**
- * Добавляет событие клик на кнопку
+ * Adds click event to button
 */
   addEvents() {
     this.submitElement.addEventListener('click', () => {
@@ -204,7 +202,7 @@ class CookiePopup {
   }
 
 /**
- * Показывает popup, если пользователь еще не принял куки
+ * Shows popup if user has not yet accepted cookies
 */
   render() {
     if(!localStorage.getItem('cookieAccepted')) {
