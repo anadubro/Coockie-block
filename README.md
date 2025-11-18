@@ -146,7 +146,7 @@ You are free to use, modify, and distribute this software in source or binary fo
       </script>
     ```
     This is the main text for the cookie block, which will be displayed to website users, for example: 'We use cookies to improve the performance of the website. For more details see [LINK], [LINK]'.
-    In square brackets [...] we specify the text for the link, for example [cookie], [data protection]. The link text in square brackets must be specified in the same order as the URLs listed in the linkUrls field described below.
+    In square brackets [...] we specify the text for the link, for example [cookie], [data protection]. The link text in square brackets must be specified in the same order as the URLs listed in the **linkUrls** field described below.
 
   - Field **linkUrls**
     ```html
