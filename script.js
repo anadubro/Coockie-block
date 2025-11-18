@@ -27,6 +27,7 @@ class CookiePopup {
       text: "Мы используем файлы cookie для улучшения работы сайта. Подробнее см. [cookie], [защита данных]",
       linkUrls: ["https://example.com/cookies", "https://example.com/cookies23232"],
       buttonText: "Принять",
+      timeoutLoadingBlock: '1000',
 
       backgroundColorBlock: '#e0e9fc',
       maxWidthContainer: '500px',
@@ -207,7 +208,7 @@ class CookiePopup {
     if(!localStorage.getItem('cookieAccepted')) {
       setTimeout(() => {
         this.containerElement.classList.add('cookie-popup_open');
-      }, 1000);
+      }, this.settings.timeoutLoadingBlock);
     }
   }
 }
