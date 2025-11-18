@@ -68,37 +68,38 @@ You are free to use, modify, and distribute this software in source or binary fo
 
   Пример использования стилей:
   ```html
-      <script>
-        const cookiePopupSettings = {
-          backgroundColorBlock: '#e0e9fc',
-          maxWidthContainer: '500px',
-          borderBlock: '1px solid #8787874a',
-          borderRadiusBlock: '15px 5px',
-          boxShadowBlock: '3px 3px 10px #00000073',
-          animationBlock: 'slideBounce 1.6s forwards ease-out',
-          opasityBlock: '0.8',
-        
-          // Text styles
-          colorText: '#000',
-          fontSizeText: '17px',
-          widthTextBlock: '70%',
-        
-          // Link styles
-          colorLink: '#336aea',
-          colorLinkHover: '#08308f',
-        
-          // Button styles
-          backgroundColorButton: '#336aea',
-          colorTextButton: '#e0e0e0',
-          borderButton: 'none',
-          fontSizeButton: '17px',
-          boxShadowButton: '3px 3px 10px #00000073',
-          transformButtonHover: 'scale(1.05)'
-        }
-      </script>
-    ```
+    <script>
+      const cookiePopupSettings = {
+        backgroundColorBlock: '#e0e9fc',
+        maxWidthContainer: '500px',
+        borderBlock: '1px solid #8787874a',
+        borderRadiusBlock: '15px 5px',
+        boxShadowBlock: '3px 3px 10px #00000073',
+        animationBlock: 'slideBounce 1.6s forwards ease-out',
+        opasityBlock: '0.8',
+      
+        // Text styles
+        colorText: '#000',
+        fontSizeText: '17px',
+        widthTextBlock: '70%',
+      
+        // Link styles
+        colorLink: '#336aea',
+        colorLinkHover: '#08308f',
+      
+        // Button styles
+        backgroundColorButton: '#336aea',
+        colorTextButton: '#e0e0e0',
+        borderButton: 'none',
+        fontSizeButton: '17px',
+        boxShadowButton: '3px 3px 10px #00000073',
+        transformButtonHover: 'scale(1.05)'
+      }
+    </script>
+  ```
 4. Блок с куками всплывает через 1 секунду после загрузки страницы. Редактирование отложенного таймера загрузки блока не редактируется пользовательскими настройками, но при необходимости его можно изменить в файле [SCRIPT](./script.js), в методе render():
-  ```js
+
+  ```javascript
     render() {
       if(!localStorage.getItem('cookieAccepted')) {
         setTimeout(() => {
@@ -107,4 +108,5 @@ You are free to use, modify, and distribute this software in source or binary fo
       }
     }
   ```
+
   В данный момент установленно 1000 милисекунд можно менять на нужное вам значение.
