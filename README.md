@@ -125,3 +125,125 @@ You are free to use, modify, and distribute this software in source or binary fo
       }
     </script>
   ```
+
+# Documentation for Use
+### Everything you need to know for using the pattern and adjusting the settings for yourself:
+
+1. User settings of the pattern are located in the file [INDEX](./index.html), inside the <script> tag
+  ```html
+    <script>
+      const cookiePopupSettings = {..SETTINGS..}
+    </script>
+  ```
+
+2. Breakdown of the fields inside the user settings:
+  - Field **text**
+    ```html
+      <script>
+        const cookiePopupSettings = {
+          text: 'We use cookies to improve the performance of the website. For more details see [cookie], [data protection]',
+        }
+      </script>
+    ```
+    This is the main text for the cookie block, which will be displayed to website users, for example: 'We use cookies to improve the performance of the website. For more details see [LINK], [LINK]'.
+    In square brackets [...] we specify the text for the link, for example [cookie], [data protection]. The link text in square brackets must be specified in the same order as the URLs listed in the linkUrls field described below.
+
+  - Field **linkUrls**
+    ```html
+      <script>
+        const cookiePopupSettings = {
+          linkUrls: ['https://example.com/cookies', 'https://example.com/cookies-2'],
+        }
+      </script>
+    ```
+    This is a list of links, you can add as many URLs as needed, which will correspond to the text in square brackets from the **text** field, allowing you to insert links anywhere in the text without losing meaning. URLs are listed separated by commas, in the same order as they are used in the **text** field.
+
+  - Field **buttonText**
+    ```html
+      <script>
+        const cookiePopupSettings = {
+          buttonText: 'Принять',
+        }
+      </script>
+    ```
+    This is the text displayed inside the button with the cookie acceptance functionality. Information about the user clicking the button is stored in LocalStorage.
+
+  - Field **timeoutLoadingBlock**
+    ```html
+        <script>
+          const cookiePopupSettings = {
+            timeoutLoadingBlock: '1000',
+          }
+        </script>
+    ```
+    This is the delayed loading of the cookie block when the page loads. The cookie block pops up 1 second after the page loads.
+    By default, it is set to 1000 milliseconds.
+
+
+3. How to style the cookie block in the settings:
+  Below is a list of fields responsible for styling the elements, followed by an example of using styles (to change the default styles, use the corresponding fields with the values you need):
+    - **backgroundColorBlock** - Background of the general cookie block; the color can be specified in any format (HEX, RGB, RGBA, HSL).
+    - **maxWidthContainer** - Maximum width of the cookie block.
+    - **borderBlock** - Border of the cookie block, specified in the format: border thickness + border style + border color ('1px solid #8787874a').
+    - **borderRadiusBlock** - Border radius, can be set in px or %.
+    - **boxShadowBlock** - Shadow of the cookie block.
+    - **opasityBlock** - Opacity of the block.
+    - **colorText** - Color of the main text from the field **text**.
+    - **fontSizeText** - Font size of the main text from the field **text**.
+    - **widthTextBlock** - Width of the main text from the field **text**.
+    - **colorLink** - Color of the link text from the **text** field in square brackets.
+    - **colorLinkHover** - Color of the link text on hover from the **text** field in square brackets.
+    - **backgroundColorButton** - Background color of the button **buttonText**.
+    - **colorTextButton** - Text color of the button **buttonText**.
+    - **borderButton** - Border of the **buttonText** button in the format ('1px solid #8787874a').
+    - **fontSizeButton** - Font size of the button text **buttonText**.
+    - **boxShadowButton** - Shadow of the button **buttonText**.
+    - **transformButtonHover** - Button transformation; by default, scaling is applied ('scale(1.05)').
+
+  Example of using styles:
+  ```html
+    <script>
+      const cookiePopupSettings = {
+        // Background color
+        backgroundColorBlock: '#e0e9fc',
+        // Maximum block width
+        maxWidthContainer: '500px',
+        // Block border
+        borderBlock: '1px solid #8787874a',
+        // Corner rounding
+        borderRadiusBlock: '15px 5px',
+        // Block shadow
+        boxShadowBlock: '3px 3px 10px #00000073',
+        // Block transparency
+        opasityBlock: '0.8',
+      
+        // Text styles
+        // Text color
+        colorText: '#000',
+        // Text size
+        fontSizeText: '17px',
+        // Text block width
+        widthTextBlock: '70%',
+      
+        // Link styles
+        // Link color
+        colorLink: '#336aea',
+        // Link color on hover
+        colorLinkHover: '#08308f',
+      
+        // Button styles
+        // Button background color
+        backgroundColorButton: '#336aea',
+        // Button text color
+        colorTextButton: '#e0e0e0',
+        // Button border
+        borderButton: 'none',
+        // Button text size
+        fontSizeButton: '17px',
+        // Button shadow
+        boxShadowButton: '3px 3px 10px #00000073',
+        // Button transformation on mouse hover
+        transformButtonHover: 'scale(1.05)'
+      }
+    </script>
+  ```
