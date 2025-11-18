@@ -52,7 +52,6 @@ You are free to use, modify, and distribute this software in source or binary fo
             timeoutLoadingBlock: '1000',
           }
         </script>
-      ```
     ```
   Это отложенная загрузка блока с куками при загрузке страницы. Блок с куками всплывает через 1 секунду после загрузки страницы.
   По умолчанию установлено 1000 миллисекунд.
