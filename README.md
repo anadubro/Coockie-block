@@ -47,24 +47,24 @@ You are free to use, modify, and distribute this software in source or binary fo
 
 3. Как стилизовать блок с куками в настройках:
   Ниже приведен перечень полей, которые отвечают за стилизацию элементов, а после приведен пример использования стилей(чтобы изменить стили,заданные по умолчанию, используйте соответствующие поля с нужными вам значениями):
-    **backgroundColorBlock** - фон общего блока с куками, тут указывается цвет в любом из форматов(HEX, RGB, RGBA, HSL).
-    **maxWidthContainer** - максимальная ширина блока с куками.
-    **borderBlock** - граница бока с куками, задается в формате: толщина границы + стиль границы + цвет границы ('1px solid #8787874a').
-    **borderRadiusBlock** - закругление границы, можно задать в px или в %.
-    **boxShadowBlock** - тень блока с куками.
-    **animationBlock** - анимация для всплытия и подпрыгивания блока.
-    **opasityBlock** - прозрачность блока.
-    **colorText** - цвет основного текста из поля **text**.
-    **fontSizeText** - размер основного текста из поля **text**.
-    **widthTextBlock** - ширина основного текста из поля **text**.
-    **colorLink** - цвет текста ссылок из поля **text** в квадратных скобках.
-    **colorLinkHover** - цвет текста ссылок при наведении мыши из поля **text** в квадратных скобках.
-    **backgroundColorButton** - цвето фона кнопки **buttonText**.
-    **colorTextButton** - цвет текста кнопки **buttonText**.
-    **borderButton** - граница кнопки **buttonText** в формате ('1px solid #8787874a').
-    **fontSizeButton** - размер текста кнопки **buttonText**.
-    **boxShadowButton** - тень кнопки **buttonText**.
-    **transformButtonHover** - тансформация кнопки, по умолчанию стоит маштабирование ('scale(1.05)').
+    - **backgroundColorBlock** - фон общего блока с куками, тут указывается цвет в любом из форматов(HEX, RGB, RGBA, HSL).
+    - **maxWidthContainer** - максимальная ширина блока с куками.
+    - **borderBlock** - граница бока с куками, задается в формате: толщина границы + стиль границы + цвет границы ('1px solid #8787874a').
+    - **borderRadiusBlock** - закругление границы, можно задать в px или в %.
+    - **boxShadowBlock** - тень блока с куками.
+    - **animationBlock** - анимация для всплытия и подпрыгивания блока.
+    - **opasityBlock** - прозрачность блока.
+    - **colorText** - цвет основного текста из поля **text**.
+    - **fontSizeText** - размер основного текста из поля **text**.
+    - **widthTextBlock** - ширина основного текста из поля **text**.
+    - **colorLink** - цвет текста ссылок из поля **text** в квадратных скобках.
+    - **colorLinkHover** - цвет текста ссылок при наведении мыши из поля **text** в квадратных скобках.
+    - **backgroundColorButton** - цвето фона кнопки **buttonText**.
+    - **colorTextButton** - цвет текста кнопки **buttonText**.
+    - **borderButton** - граница кнопки **buttonText** в формате ('1px solid #8787874a').
+    - **fontSizeButton** - размер текста кнопки **buttonText**.
+    - **boxShadowButton** - тень кнопки **buttonText**.
+    - **transformButtonHover** - тансформация кнопки, по умолчанию стоит маштабирование ('scale(1.05)').
 
   Пример использования стилей:
   ```html
