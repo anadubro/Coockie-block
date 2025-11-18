@@ -44,8 +44,8 @@ You are free to use, modify, and distribute this software in source or binary fo
       </script>
     ```
     Это текст, который отображается внутри кнопки, с функционалом принятия куков. Данные о том, что пользователь кликнул по кнопке, сохраняются в LocalStorage.
-
-3. Поле **timeoutLoadingBlock**
+    
+  - Поле **timeoutLoadingBlock**
   ```html
       <script>
         const cookiePopupSettings = {
@@ -58,7 +58,7 @@ You are free to use, modify, and distribute this software in source or binary fo
   По умолчанию установлено 1000 миллисекунд.
 
 
-4. Как стилизовать блок с куками в настройках:
+3. Как стилизовать блок с куками в настройках:
   Ниже приведен перечень полей, которые отвечают за стилизацию элементов, а после приведен пример использования стилей(чтобы изменить стили,заданные по умолчанию, используйте соответствующие поля с нужными вам значениями):
     - **backgroundColorBlock** - фон общего блока с куками, тут указывается цвет в любом из форматов(HEX, RGB, RGBA, HSL).
     - **maxWidthContainer** - максимальная ширина блока с куками.
