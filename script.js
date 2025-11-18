@@ -69,7 +69,6 @@ class CookiePopup {
     this.containerElement.append(paragraphElement);
 
     let subStringList = this.settings.text.split(/(\[.+?\])/);
-    console.log(subStringList)
 
     let linkIndex = 0;
     for(let i = 0; i < subStringList.length; i++) {
