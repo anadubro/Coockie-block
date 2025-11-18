@@ -44,16 +44,16 @@ You are free to use, modify, and distribute this software in source or binary fo
       </script>
     ```
     Это текст, который отображается внутри кнопки, с функционалом принятия куков. Данные о том, что пользователь кликнул по кнопке, сохраняются в LocalStorage.
-    
+
   - Поле **timeoutLoadingBlock**
-  ```html
-      <script>
-        const cookiePopupSettings = {
-          timeoutLoadingBlock: '1000',
-        }
-      </script>
+    ```html
+        <script>
+          const cookiePopupSettings = {
+            timeoutLoadingBlock: '1000',
+          }
+        </script>
+      ```
     ```
-  ```
   Это отложенная загрузка блока с куками при загрузке страницы. Блок с куками всплывает через 1 секунду после загрузки страницы.
   По умолчанию установлено 1000 миллисекунд.
 
@@ -83,29 +83,45 @@ You are free to use, modify, and distribute this software in source or binary fo
   ```html
     <script>
       const cookiePopupSettings = {
+        // Background color
         backgroundColorBlock: '#e0e9fc',
+        // Maximum block width
         maxWidthContainer: '500px',
+        // Block border
         borderBlock: '1px solid #8787874a',
+        // Corner rounding
         borderRadiusBlock: '15px 5px',
+        // Block shadow
         boxShadowBlock: '3px 3px 10px #00000073',
-        animationBlock: 'slideBounce 1.6s forwards ease-out',
+        // Block transparency
         opasityBlock: '0.8',
       
         // Text styles
+        // Text color
         colorText: '#000',
+        // Text size
         fontSizeText: '17px',
+        // Text block width
         widthTextBlock: '70%',
       
         // Link styles
+        // Link color
         colorLink: '#336aea',
+        // Link color on hover
         colorLinkHover: '#08308f',
       
         // Button styles
+        // Button background color
         backgroundColorButton: '#336aea',
+        // Button text color
         colorTextButton: '#e0e0e0',
+        // Button border
         borderButton: 'none',
+        // Button text size
         fontSizeButton: '17px',
+        // Button shadow
         boxShadowButton: '3px 3px 10px #00000073',
+        // Button transformation on mouse hover
         transformButtonHover: 'scale(1.05)'
       }
     </script>
