@@ -3,6 +3,9 @@
 This project is licensed under the BSD 3-Clause License.  
 You are free to use, modify, and distribute this software in source or binary form, with or without modification, under the conditions described in the [LICENSE](./LICENSE.txt) file.
 
+
+[DEMO](https://anadubro.github.io/Coockie-block/)
+
 # Документация по использованию
 ### Все, что нужно знать для использования паттерна и изменения настроек под себя:
 
@@ -126,6 +129,11 @@ You are free to use, modify, and distribute this software in source or binary fo
     </script>
   ```
 
+Если нашли ошибку, или по другим вопросам, пишите в телеграм **@mika7505**
+
+
+[DEMO](https://anadubro.github.io/Coockie-block/)
+
 # Documentation for Use
 ### Everything you need to know for using the pattern and adjusting the settings for yourself:
 
@@ -247,3 +255,5 @@ You are free to use, modify, and distribute this software in source or binary fo
       }
     </script>
   ```
+
+  If you find an error or have any other questions, write to me on Telegram **@mika7505**
